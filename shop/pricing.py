@@ -5,7 +5,7 @@ def apply_discount(price: float, percent: float) -> float:
     """Return `price` reduced by `percent` percent, rounded to cents."""
     if not 0 <= percent <= 100:
         raise ValueError("percent must be between 0 and 100")
-    return round(price * percent / 100, 2)
+    return round(price * (1 - percent / 100), 2)
 
 
 def cart_total(items: list[tuple[float, int]], discount: float = 0) -> float:
